@@ -13,12 +13,13 @@ import Footer from "./components/layout/Footer";
 import ScrollToTop from "./components/page-transition/ScrollToTop";
 import PageTransition from "./components/page-transition/PageTransition";
 import BackToTopButton from "./components/buttons/BackToTopButton";
+import NotFound from "./pages/NotFound";
 // import PageTransition from "./components/page-transition/PageTransition";
 
 export default function App() {
   return (
     <BrowserRouter>
-      <PageTransition/>
+      <PageTransition />
       <ScrollToTop />
       <Navbar />
       <Routes>
@@ -31,9 +32,11 @@ export default function App() {
         <Route path="/careers" element={<CareersPage />} />
         <Route path="/life" element={<LifeAtCompanyPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="*" element={<NotFound />} />
+
       </Routes>
       <Footer />
-      <BackToTopButton/>
+      <BackToTopButton />
     </BrowserRouter>
   );
 }
