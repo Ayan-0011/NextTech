@@ -1,7 +1,6 @@
 import Hero from '../sections/home/Hero'
 import TechStrip from '../sections/home/TechStrip'
 import ServicesSection from '../sections/home/ServicesSection'
-import WhyUs from '../sections/home/WhyUs'
 import TechnologySection from '../sections/home/TechnologySection'
 import FinalCTA from '../sections/home/FinalCTA'
 import WhatWeBuild  from '../sections/home/Index'
@@ -16,7 +15,7 @@ export default function HomePage() {
       <WhatWeBuild/>
       {/* <ServicesSection /> */}
       {/* <FeaturedWork /> */}
-      <WhyUs />
+      {/* <WhyUs /> */}
       {/* <ProcessSection /> */}
       {/* <Card/> */}
       <ProcessTabs/>

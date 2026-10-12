@@ -64,17 +64,7 @@ export default function MobileMenu({ open, onClose, links }) {
                   {link.label}
                 </NavLink>
               ))}
-              <NavLink
-                to="/contact"
-                onClick={onClose}
-                className={({ isActive }) =>
-                  `px-3 py-3.5 text-base font-medium rounded-lg transition-colors ${
-                    isActive ? 'text-blue bg-soft-blue' : 'text-text hover:bg-bg'
-                  }`
-                }
-              >
-                Contact
-              </NavLink>
+
             </nav>
 
             {/* CTA */}

@@ -121,3 +121,7 @@ body {
     padding: 0 20px;
   }
 }
+
+/* // Change these two values to re-theme the whole section quickly
+const BASE = '#053B33' // deep emerald background
+const GLOW = '#10B981' // bright emerald used for glows */

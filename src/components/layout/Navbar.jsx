@@ -75,7 +75,7 @@ export default function Navbar() {
 
             {/* Let's Talk */}
             <Link  to="/contact"
-              className="group mx-3 inline-flex items-center gap-2 rounded-full bg-navy px-4 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-navy-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2 md:px-5" >
+              className="group mx-1 inline-flex items-center gap-2 rounded-full bg-navy px-4 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-navy-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2 md:px-5" >
               Let's Talk
               <ArrowRight
                 size={15}
