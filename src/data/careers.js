@@ -1,0 +1,62 @@
+export const careers = [
+  {
+    id: 1,
+    title: 'Frontend Developer',
+    tech: 'React / TypeScript',
+    location: 'Ahmedabad / Hybrid',
+    type: 'Full-time',
+    description: 'We\'re looking for a frontend developer who cares about code quality, accessibility and building interfaces that people actually enjoy using. You\'ll work closely with our designer and backend team across real product work.',
+    responsibilities: [
+      'Build and maintain web interfaces using React and TypeScript',
+      'Collaborate with the designer on implementation details',
+      'Write clean, accessible, well-structured code',
+      'Participate in code reviews and technical discussions',
+    ],
+    requirements: [
+      '2+ years of React development experience',
+      'Comfortable with TypeScript',
+      'Understanding of accessibility basics',
+      'Good communication and willingness to ask questions',
+    ],
+  },
+  {
+    id: 2,
+    title: 'Backend Developer',
+    tech: 'Node.js / MongoDB',
+    location: 'Ahmedabad / Hybrid',
+    type: 'Full-time',
+    description: 'We need a backend developer who can design and build APIs and data systems that hold up in production. You\'ll work on the server-side of our client projects and internal tools.',
+    responsibilities: [
+      'Design and build REST APIs using Node.js and Express',
+      'Work with MongoDB and PostgreSQL databases',
+      'Integrate third-party services and APIs',
+      'Handle deployment and basic DevOps tasks',
+    ],
+    requirements: [
+      '2+ years of Node.js development',
+      'Experience with MongoDB or PostgreSQL',
+      'Understanding of REST API design',
+      'Familiarity with cloud services (AWS or similar)',
+    ],
+  },
+  {
+    id: 3,
+    title: 'UI/UX Designer',
+    tech: 'Figma / Product Design',
+    location: 'Ahmedabad / Hybrid',
+    type: 'Full-time',
+    description: 'We\'re looking for a product designer who can turn business requirements and user needs into clear, functional interfaces. You\'ll be involved from discovery through to implementation.',
+    responsibilities: [
+      'Conduct user research and map user flows',
+      'Create wireframes, mockups and interactive prototypes',
+      'Work with the development team on implementation',
+      'Maintain and evolve the design system',
+    ],
+    requirements: [
+      '2+ years of product or UI/UX design experience',
+      'Proficiency in Figma',
+      'Portfolio showing real product work',
+      'Ability to explain design decisions clearly',
+    ],
+  },
+]
