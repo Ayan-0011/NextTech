@@ -13,19 +13,19 @@ export default function Button({
   disabled = false,
 }) {
   const base =
-    'inline-flex items-center gap-2 font-semibold text-sm transition-all duration-200 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed'
+    'inline-flex items-center gap-2 font-semibold text-sm transition-all duration-200 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed'
 
   const variants = {
     primary:
-      'bg-blue text-white px-6 py-3 hover:bg-blue/90 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue/20',
+      'bg-brand text-white px-6 py-3 hover:bg-brand-dark hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand/25',
     secondary:
-      'bg-transparent text-text border border-border px-6 py-3 hover:border-text/30 hover:bg-surface hover:-translate-y-0.5',
+      'bg-transparent text-text border border-border px-6 py-3 hover:border-brand/40 hover:bg-mint-soft hover:-translate-y-0.5',
     ghost:
-      'bg-transparent text-blue px-0 py-1 hover:gap-3',
+      'bg-transparent text-brand px-0 py-1 hover:gap-3',
     'white':
-      'bg-white text-navy px-6 py-3 hover:bg-white/90 hover:-translate-y-0.5 hover:shadow-lg',
+      'bg-white text-forest px-6 py-3 hover:bg-mint-soft hover:-translate-y-0.5 hover:shadow-lg',
     'white-outline':
-      'bg-transparent text-white border border-white/30 px-6 py-3 hover:bg-white/10 hover:border-white/60',
+      'bg-transparent text-white border border-white/30 px-6 py-3 hover:bg-white/10 hover:border-emerald-300/60',
   }
 
   const classes = `${base} ${variants[variant]} ${className}`

@@ -7,10 +7,10 @@ export default function AboutPreview() {
       <div className="container">
         <div className="max-w-3xl mx-auto text-center">
           <FadeIn>
-            <span className="text-xs font-semibold uppercase tracking-widest text-blue mb-4 block">
+            <span className="text-xs font-semibold uppercase tracking-widest text-brand mb-4 block">
               About
             </span>
-            <h2 className="heading-section text-navy mb-6">
+            <h2 className="heading-section text-forest mb-6">
               A small team focused on building useful software.
             </h2>
             <p className="text-lg text-muted leading-relaxed mb-8">
@@ -18,7 +18,7 @@ export default function AboutPreview() {
             </p>
             <Link
               to="/about"
-              className="inline-flex items-center gap-2 text-blue font-semibold hover:gap-4 transition-all duration-200"
+              className="inline-flex items-center gap-2 text-brand font-semibold hover:gap-4 transition-all duration-200"
             >
               Learn more about us <span aria-hidden="true">→</span>
             </Link>

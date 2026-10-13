@@ -4,6 +4,7 @@ import ProjectCard from '../components/cards/ProjectCard'
 import FadeIn from '../components/animations/FadeIn'
 import { StaggerContainer, StaggerItem } from '../components/animations/Stagger'
 import FinalCTA from '../sections/home/FinalCTA'
+import EmeraldBackdrop from '../components/ui/EmeraldBackdrop'
 
 const filters = ['All', 'Web', 'Mobile', 'SaaS', 'AI', 'Custom Software']
 
@@ -17,10 +18,11 @@ export default function WorkPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="pt-28 pb-20 bg-navy text-white">
-        <div className="container">
+      <section data-surface="dark" className="relative overflow-hidden pt-28 pb-20 bg-forest text-white">
+        <EmeraldBackdrop />
+        <div className="container relative z-10">
           <FadeIn className="max-w-2xl">
-            <span className="text-xs font-semibold uppercase tracking-widest text-blue/70 mb-4 block">
+            <span className="text-xs font-semibold uppercase tracking-widest text-emerald-300 mb-4 block">
               Work
             </span>
             <h1 className="heading-hero text-white mb-6">
@@ -44,7 +46,7 @@ export default function WorkPage() {
                 onClick={() => setActive(f)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   active === f
-                    ? 'bg-navy text-white'
+                    ? 'bg-forest text-white'
                     : 'bg-surface border border-border text-muted hover:text-text hover:border-text/20'
                 }`}
               >

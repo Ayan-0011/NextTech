@@ -3,15 +3,17 @@ import FadeIn from '../components/animations/FadeIn'
 import FinalCTA from '../sections/home/FinalCTA'
 import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import EmeraldBackdrop from '../components/ui/EmeraldBackdrop'
 
 export default function ServicesPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="pt-28 pb-20 bg-navy text-white">
-        <div className="container">
+      <section data-surface="dark" className="relative overflow-hidden pt-28 pb-20 bg-forest text-white">
+        <EmeraldBackdrop />
+        <div className="container relative z-10">
           <FadeIn className="max-w-2xl">
-            <span className="text-xs font-semibold uppercase tracking-widest text-blue/70 mb-4 block">
+            <span className="text-xs font-semibold uppercase tracking-widest text-emerald-300 mb-4 block">
               Services
             </span>
             <h1 className="heading-hero text-white mb-6">
@@ -35,10 +37,10 @@ export default function ServicesPage() {
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               {/* Left */}
               <FadeIn>
-                <span className="text-xs font-semibold uppercase tracking-widest text-blue mb-3 block">
+                <span className="text-xs font-semibold uppercase tracking-widest text-brand mb-3 block">
                   {service.number}
                 </span>
-                <h2 className="heading-section text-navy mb-4">{service.title}</h2>
+                <h2 className="heading-section text-forest mb-4">{service.title}</h2>
                 <p className="text-lg text-muted leading-relaxed mb-6">{service.short}</p>
 
                 <div className="mb-6">
@@ -52,7 +54,7 @@ export default function ServicesPage() {
 
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 bg-blue text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue/90 hover:-translate-y-0.5 transition-all duration-200"
+                  className="inline-flex items-center gap-2 bg-brand text-white font-semibold px-6 py-3 rounded-lg hover:bg-brand/90 hover:-translate-y-0.5 transition-all duration-200"
                 >
                   Discuss a project <ArrowRight size={15} />
                 </Link>
@@ -67,7 +69,7 @@ export default function ServicesPage() {
                   <ul className="space-y-3 mb-8">
                     {service.capabilities.map((c) => (
                       <li key={c} className="flex items-start gap-3 text-sm text-text">
-                        <span className="w-1.5 h-1.5 rounded-full bg-blue mt-2 flex-shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2 flex-shrink-0" />
                         {c}
                       </li>
                     ))}

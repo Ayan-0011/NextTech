@@ -1,5 +1,7 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
+
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ServicesPage from "./pages/ServicesPage";
@@ -9,19 +11,34 @@ import ProcessPage from "./pages/ProcessPage";
 import CareersPage from "./pages/CareersPage";
 import LifeAtCompanyPage from "./pages/LifeAtCompanyPage";
 import ContactPage from "./pages/ContactPage";
-import Footer from "./components/layout/Footer";
+import NotFound from "./pages/NotFound";
+
 import ScrollToTop from "./components/page-transition/ScrollToTop";
 import PageTransition from "./components/page-transition/PageTransition";
 import BackToTopButton from "./components/buttons/BackToTopButton";
-import NotFound from "./pages/NotFound";
-// import PageTransition from "./components/page-transition/PageTransition";
 
-export default function App() {
+function AppContent() {
+  const location = useLocation();
+
+  const isNotFound = ![
+    "/",
+    "/about",
+    "/services",
+    "/work",
+    "/process",
+    "/careers",
+    "/life",
+    "/contact",
+  ].includes(location.pathname) &&
+    !/^\/work\/[^/]+$/.test(location.pathname);
+
   return (
-    <BrowserRouter>
+    <>
       <PageTransition />
       <ScrollToTop />
-      <Navbar />
+
+      {!isNotFound && <Navbar />}
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
@@ -33,10 +50,19 @@ export default function App() {
         <Route path="/life" element={<LifeAtCompanyPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<NotFound />} />
-
       </Routes>
-      <Footer />
-      <BackToTopButton />
+
+      {!isNotFound && <Footer />}
+
+      {!isNotFound && <BackToTopButton />}
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   );
 }

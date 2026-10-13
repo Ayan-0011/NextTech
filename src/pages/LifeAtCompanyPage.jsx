@@ -1,6 +1,7 @@
 import FadeIn from '../components/animations/FadeIn'
 import { StaggerContainer, StaggerItem } from '../components/animations/Stagger'
 import FinalCTA from '../sections/home/FinalCTA'
+import EmeraldBackdrop from '../components/ui/EmeraldBackdrop'
 
 const culturePoints = [
   {
@@ -33,10 +34,11 @@ export default function LifeAtCompanyPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="pt-28 pb-20 bg-navy text-white">
-        <div className="container">
+      <section data-surface="dark" className="relative overflow-hidden pt-28 pb-20 bg-forest text-white">
+        <EmeraldBackdrop />
+        <div className="container relative z-10">
           <FadeIn className="max-w-2xl">
-            <span className="text-xs font-semibold uppercase tracking-widest text-blue/70 mb-4 block">
+            <span className="text-xs font-semibold uppercase tracking-widest text-emerald-300 mb-4 block">
               Life at Nexa Tech
             </span>
             <h1 className="heading-hero text-white mb-6">
@@ -53,13 +55,13 @@ export default function LifeAtCompanyPage() {
       <section className="section-padding bg-bg">
         <div className="container">
           <FadeIn className="max-w-xl mb-12">
-            <h2 className="heading-section text-navy">How we work</h2>
+            <h2 className="heading-section text-forest">How we work</h2>
           </FadeIn>
           <StaggerContainer className="grid sm:grid-cols-2 gap-5">
             {culturePoints.map((item) => (
               <StaggerItem key={item.title}>
                 <div className="bg-surface border border-border rounded-xl p-7">
-                  <h3 className="text-lg font-bold text-navy mb-2">{item.title}</h3>
+                  <h3 className="text-lg font-bold text-forest mb-2">{item.title}</h3>
                   <p className="text-muted leading-relaxed text-sm">{item.body}</p>
                 </div>
               </StaggerItem>
@@ -72,7 +74,7 @@ export default function LifeAtCompanyPage() {
       <section className="section-padding bg-surface">
         <div className="container max-w-3xl">
           <FadeIn>
-            <h2 className="heading-section text-navy mb-6">The environment</h2>
+            <h2 className="heading-section text-forest mb-6">The environment</h2>
             <div className="space-y-4 text-muted leading-relaxed">
               <p>
                 We work out of a small office in Ahmedabad — a straightforward space with good desks, reliable internet and a whiteboard that gets a lot of use.
@@ -92,15 +94,15 @@ export default function LifeAtCompanyPage() {
       <section className="section-padding bg-bg">
         <div className="container">
           <FadeIn className="mb-10">
-            <h2 className="heading-section text-navy">A few moments</h2>
+            <h2 className="heading-section text-forest">A few moments</h2>
           </FadeIn>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {[
-              { label: 'Whiteboard session', bg: '#EFF6FF' },
+              { label: 'Whiteboard session', bg: '#ECFDF5' },
               { label: 'Code review', bg: '#F0FDF4' },
               { label: 'Product launch day', bg: '#FFF7ED' },
               { label: 'Team lunch', bg: '#F0FDF4' },
-              { label: 'Design critique', bg: '#EFF6FF' },
+              { label: 'Design critique', bg: '#ECFDF5' },
               { label: 'End-of-sprint demo', bg: '#FFF7ED' },
             ].map((item) => (
               <div
@@ -121,14 +123,14 @@ export default function LifeAtCompanyPage() {
       <section className="section-padding bg-surface">
         <div className="container max-w-2xl">
           <FadeIn className="mb-10">
-            <h2 className="heading-section text-navy mb-3">A normal day</h2>
+            <h2 className="heading-section text-forest mb-3">A normal day</h2>
             <p className="text-muted">Not every day is the same — but most of them look something like this.</p>
           </FadeIn>
           <div className="space-y-0">
             {daySchedule.map((item, i) => (
               <FadeIn key={item.time} delay={i * 0.08}>
                 <div className="flex gap-6 py-5 border-b border-border last:border-0">
-                  <div className="w-16 flex-shrink-0 text-sm font-bold text-blue">{item.time}</div>
+                  <div className="w-16 flex-shrink-0 text-sm font-bold text-brand">{item.time}</div>
                   <div className="text-text text-sm leading-relaxed">{item.activity}</div>
                 </div>
               </FadeIn>

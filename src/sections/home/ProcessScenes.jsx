@@ -146,7 +146,7 @@ function DesignScene() {
         <div className="pt-bar pt-bar--w45" />
       </Window>
       <Float className="pt-palette" i={2} x="4.7%" y="52%">
-        {["#1d2a6b", "#3b50c8", "#f59e0b", "#10b981", "#0f1117"].map((c) => (
+        {["#053b33", "#047857", "#f59e0b", "#10b981", "#111827"].map((c) => (
           <span key={c} style={{ background: c }} />
         ))}
       </Float>

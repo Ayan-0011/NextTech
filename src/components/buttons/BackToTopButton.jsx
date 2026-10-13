@@ -35,7 +35,7 @@ export default function BackToTopButton() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 16, scale: 0.9 }}
           transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-          className="group fixed bottom-5 right-5 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-navy text-white shadow-lg shadow-navy/25 transition-colors duration-200 hover:bg-navy-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2 sm:bottom-7 sm:right-7"
+          className="group fixed bottom-5 right-5 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-forest text-white shadow-lg shadow-forest/30 transition-colors duration-200 hover:bg-forest-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 sm:bottom-7 sm:right-7"
         >
           {/* Scroll progress ring */}
           <svg className="absolute inset-0 -rotate-90" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -44,7 +44,7 @@ export default function BackToTopButton() {
               cx="24"
               cy="24"
               r="22"
-              stroke="#60A5FA"
+              stroke="#34D399"
               strokeWidth="2"
               strokeLinecap="round"
               style={{ pathLength: scrollYProgress }}

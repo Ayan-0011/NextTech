@@ -3,7 +3,7 @@ import NLogo from './NLogo'
 import { BRAND_NAME } from '../../data/brand'
 
 const tones = {
-  dark: 'text-navy',
+  dark: 'text-forest',
   light: 'text-white',
 }
 
@@ -21,7 +21,7 @@ export default function Logo({
   onClick,
   className = '',
 }) {
-  const classes = `inline-flex items-center ${stacked ? 'flex-col gap-4' : 'gap-2.5'} rounded-md font-bold tracking-tight leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2 ${tones[variant]} ${className}`
+  const classes = `inline-flex items-center ${stacked ? 'flex-col gap-4' : 'gap-2.5'} rounded-md font-bold tracking-tight leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${tones[variant]} ${className}`
 
   const content = (
     <>

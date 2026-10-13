@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import FadeIn from '../components/animations/FadeIn'
 import { Mail, Phone, MapPin, CheckCircle, AlertCircle } from 'lucide-react'
+import EmeraldBackdrop from '../components/ui/EmeraldBackdrop'
 
 const projectTypes = [
   'Web Development',
@@ -59,17 +60,18 @@ export default function ContactPage() {
   }
 
   const inputClass = (field) =>
-    `w-full px-4 py-3 rounded-lg border text-sm text-text bg-bg focus:outline-none focus:ring-2 focus:ring-blue focus:border-blue transition-all ${
+    `w-full px-4 py-3 rounded-lg border text-sm text-text bg-bg focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand transition-all ${
       errors[field] ? 'border-red-400 bg-red-50' : 'border-border'
     }`
 
   return (
     <main>
       {/* Hero */}
-      <section className="pt-28 pb-20 bg-navy text-white">
-        <div className="container">
+      <section data-surface="dark" className="relative overflow-hidden pt-28 pb-20 bg-forest text-white">
+        <EmeraldBackdrop />
+        <div className="container relative z-10">
           <FadeIn className="max-w-xl">
-            <span className="text-xs font-semibold uppercase tracking-widest text-blue/70 mb-4 block">
+            <span className="text-xs font-semibold uppercase tracking-widest text-emerald-300 mb-4 block">
               Contact
             </span>
             <h1 className="heading-hero text-white mb-6">
@@ -88,19 +90,19 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-[1fr_2fr] gap-16 items-start">
             {/* Left */}
             <FadeIn>
-              <h2 className="text-xl font-bold text-navy mb-4">Get in touch</h2>
+              <h2 className="text-xl font-bold text-forest mb-4">Get in touch</h2>
               <p className="text-muted leading-relaxed mb-8 text-sm">
                 Whether you have a clear project brief or just an idea worth exploring, we're happy to talk. No commitment required.
               </p>
               <div className="space-y-5">
-                <a href="mailto:hello@nexatech.in" className="flex items-center gap-3 text-sm text-text hover:text-blue transition-colors group">
-                  <div className="w-9 h-9 rounded-lg bg-surface border border-border flex items-center justify-center group-hover:border-blue/30 transition-colors">
+                <a href="mailto:hello@nexatech.in" className="flex items-center gap-3 text-sm text-text hover:text-brand transition-colors group">
+                  <div className="w-9 h-9 rounded-lg bg-surface border border-border flex items-center justify-center group-hover:border-brand/30 transition-colors">
                     <Mail size={15} className="text-muted" />
                   </div>
                   hello@nexatech.in
                 </a>
-                <a href="tel:+917940000000" className="flex items-center gap-3 text-sm text-text hover:text-blue transition-colors group">
-                  <div className="w-9 h-9 rounded-lg bg-surface border border-border flex items-center justify-center group-hover:border-blue/30 transition-colors">
+                <a href="tel:+917940000000" className="flex items-center gap-3 text-sm text-text hover:text-brand transition-colors group">
+                  <div className="w-9 h-9 rounded-lg bg-surface border border-border flex items-center justify-center group-hover:border-brand/30 transition-colors">
                     <Phone size={15} className="text-muted" />
                   </div>
                   +91 79 4000 0000
@@ -121,16 +123,16 @@ export default function ContactPage() {
                   <div className="w-14 h-14 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-5">
                     <CheckCircle size={28} className="text-green-600" />
                   </div>
-                  <h3 className="text-xl font-bold text-navy mb-3">Thanks, we got your message.</h3>
+                  <h3 className="text-xl font-bold text-forest mb-3">Thanks, we got your message.</h3>
                   <p className="text-muted leading-relaxed mb-2">
                     This is a demo form — no email was actually sent.
                   </p>
                   <p className="text-muted leading-relaxed text-sm">
-                    To connect with us, email <a href="mailto:hello@nexatech.in" className="text-blue hover:underline">hello@nexatech.in</a> directly.
+                    To connect with us, email <a href="mailto:hello@nexatech.in" className="text-brand hover:underline">hello@nexatech.in</a> directly.
                   </p>
                   <button
                     onClick={() => { setSubmitted(false); setForm({ name: '', email: '', company: '', projectType: '', budget: '', message: '' }) }}
-                    className="mt-6 text-sm text-blue hover:underline"
+                    className="mt-6 text-sm text-brand hover:underline"
                   >
                     Send another message
                   </button>
@@ -265,7 +267,7 @@ export default function ContactPage() {
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-blue text-white font-semibold px-8 py-3.5 rounded-lg hover:bg-blue/90 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue/20 transition-all duration-200"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand text-white font-semibold px-8 py-3.5 rounded-lg hover:bg-brand/90 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand/20 transition-all duration-200"
                     >
                       Send message →
                     </button>

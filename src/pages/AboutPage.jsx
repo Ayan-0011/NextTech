@@ -3,6 +3,7 @@ import TeamCard from '../components/cards/TeamCard'
 import FadeIn from '../components/animations/FadeIn'
 import { StaggerContainer, StaggerItem } from '../components/animations/Stagger'
 import FinalCTA from '../sections/home/FinalCTA'
+import EmeraldBackdrop from '../components/ui/EmeraldBackdrop'
 
 const beliefs = [
   { icon: '○', title: 'Build with purpose', body: 'Every feature should serve a clear need. We don\'t add complexity for its own sake.' },
@@ -15,10 +16,11 @@ export default function AboutPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="pt-28 pb-20 bg-navy text-white">
-        <div className="container">
+      <section data-surface="dark" className="relative overflow-hidden pt-28 pb-20 bg-forest text-white">
+        <EmeraldBackdrop />
+        <div className="container relative z-10">
           <FadeIn className="max-w-2xl">
-            <span className="text-xs font-semibold uppercase tracking-widest text-blue/70 mb-4 block">
+            <span className="text-xs font-semibold uppercase tracking-widest text-emerald-300 mb-4 block">
               About
             </span>
             <h1 className="heading-hero text-white mb-6">
@@ -36,7 +38,7 @@ export default function AboutPage() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <FadeIn>
-              <h2 className="heading-section text-navy mb-6">Our story</h2>
+              <h2 className="heading-section text-forest mb-6">Our story</h2>
               <div className="space-y-4 text-muted leading-relaxed">
                 <p>
                   Nexa Tech started from a straightforward observation: most small and mid-size businesses in India were either using outdated software, expensive enterprise tools that didn't fit them, or relying on spreadsheets for things that deserved better.
@@ -57,7 +59,7 @@ export default function AboutPage() {
                 { value: '2023', label: 'Founded' },
               ].map((stat) => (
                 <div key={stat.label} className="bg-surface border border-border rounded-xl p-6 text-center">
-                  <div className="text-3xl font-bold text-navy mb-1">{stat.value}</div>
+                  <div className="text-3xl font-bold text-forest mb-1">{stat.value}</div>
                   <div className="text-xs text-muted">{stat.label}</div>
                 </div>
               ))}
@@ -70,14 +72,14 @@ export default function AboutPage() {
       <section className="section-padding bg-surface">
         <div className="container">
           <FadeIn className="max-w-xl mb-12">
-            <h2 className="heading-section text-navy">What we believe</h2>
+            <h2 className="heading-section text-forest">What we believe</h2>
           </FadeIn>
           <StaggerContainer className="grid sm:grid-cols-2 gap-5">
             {beliefs.map((b) => (
               <StaggerItem key={b.title}>
                 <div className="bg-bg border border-border rounded-xl p-7">
                   <span className="text-lg text-muted mb-3 block">{b.icon}</span>
-                  <h3 className="text-lg font-bold text-navy mb-2">{b.title}</h3>
+                  <h3 className="text-lg font-bold text-forest mb-2">{b.title}</h3>
                   <p className="text-muted leading-relaxed text-sm">{b.body}</p>
                 </div>
               </StaggerItem>
@@ -90,7 +92,7 @@ export default function AboutPage() {
       <section className="section-padding bg-bg">
         <div className="container max-w-3xl">
           <FadeIn>
-            <h2 className="heading-section text-navy mb-6">How we work</h2>
+            <h2 className="heading-section text-forest mb-6">How we work</h2>
             <div className="space-y-4 text-muted leading-relaxed">
               <p>
                 We work directly with the people who will use the software we build. That means conversations with founders, operations managers, and the staff who deal with the day-to-day — not just a brief from a single stakeholder.
@@ -110,7 +112,7 @@ export default function AboutPage() {
       <section className="section-padding bg-surface">
         <div className="container">
           <FadeIn className="max-w-xl mb-12">
-            <h2 className="heading-section text-navy mb-4">The team</h2>
+            <h2 className="heading-section text-forest mb-4">The team</h2>
             <p className="text-muted leading-relaxed">
               Five people who care about building software that works.
             </p>

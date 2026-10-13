@@ -20,7 +20,7 @@ const services = [
       'We build fast, scalable websites and web applications that turn ideas into reliable digital products.',
     tags: ['React', 'Next.js', 'Node.js'],
     icon: Globe2,
-    accent: '#E8F1FF',
+    accent: '#ECFDF5',
     image:
       'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80',
   },
@@ -31,7 +31,7 @@ const services = [
       'From simple business apps to complex mobile products, we create smooth experiences across modern devices.',
     tags: ['React Native', 'iOS', 'Android'],
     icon: Smartphone,
-    accent: '#F0ECFF',
+    accent: '#E3F7EE',
     image:
       'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1200&q=80',
   },
@@ -42,7 +42,7 @@ const services = [
       'We connect AI with everyday business workflows to reduce repetitive work and create smarter digital experiences.',
     tags: ['AI Integration', 'Automation', 'Chatbots'],
     icon: Sparkles,
-    accent: '#EAFBF5',
+    accent: '#D1FAE5',
     image:
       'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80',
   },
@@ -53,7 +53,7 @@ const services = [
       'Custom dashboards, CRM platforms and internal systems designed around the way your business actually works.',
     tags: ['CRM', 'Dashboards', 'APIs'],
     icon: LayoutDashboard,
-    accent: '#FFF3E8',
+    accent: '#F0FAF6',
     image:
       'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
   },
@@ -70,17 +70,21 @@ export default function WhatWeBuild() {
     <ReactLenis root>
       <section
         ref={container}
-        className="relative bg-[#F7F8FA] text-[#111318]"
+        className="relative bg-bg text-text"
       >
         {/* Section Intro */}
         <div className="relative z-20 flex min-h-[70vh] items-center overflow-hidden px-6 py-24 sm:px-10 lg:px-20">
+          {/* Soft emerald glows */}
+          <div aria-hidden="true" className="pointer-events-none absolute -right-40 top-8 h-[26rem] w-[26rem] rounded-full bg-emerald-300/25 blur-3xl" />
+          <div aria-hidden="true" className="pointer-events-none absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-teal-200/25 blur-3xl" />
+
           {/* Background grid */}
           <div
             className="
               pointer-events-none
               absolute inset-0
               opacity-[0.45]
-              [background-image:linear-gradient(to_right,#d8dce3_1px,transparent_1px),linear-gradient(to_bottom,#d8dce3_1px,transparent_1px)]
+              [background-image:linear-gradient(to_right,#cfe5da_1px,transparent_1px),linear-gradient(to_bottom,#cfe5da_1px,transparent_1px)]
               [background-size:64px_64px]
               [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_75%)]
             "
@@ -88,9 +92,9 @@ export default function WhatWeBuild() {
 
           <div className="relative mx-auto w-full max-w-7xl">
             <div className="mb-8 flex items-center gap-3">
-              <span className="h-2 w-2 rounded-full bg-[#315EF7]" />
+              <span className="h-2 w-2 rounded-full bg-brand" />
 
-              <span className="text-sm font-medium uppercase tracking-[0.2em] text-[#666B76]">
+              <span className="text-sm font-medium uppercase tracking-[0.2em] text-muted">
                 What We Build
               </span>
             </div>
@@ -98,11 +102,11 @@ export default function WhatWeBuild() {
             <h2 className=" max-w-5xl text-[clamp(3rem,8vw,8rem)] font-medium  leading-[1] tracking-[-0.06em] " >
               Digital products
               <br />
-              <span className="text-[#315EF7]">built to move.</span>
+              <span className="text-brand">built to move.</span>
             </h2>
 
             <div className="mt-10 flex max-w-2xl justify-between gap-8">
-              <p className="text-base leading-7 text-[#626773] sm:text-lg">
+              <p className="text-base leading-7 text-muted sm:text-lg">
                 We combine technology, design and automation to build digital
                 systems that help businesses work better and grow faster.
               </p>
@@ -191,19 +195,19 @@ function ServiceCard({
           overflow-hidden
           rounded-[28px]
           border
-          border-black/[0.07]
-          shadow-[0_25px_80px_rgba(0,0,0,0.08)]
+          border-forest/10
+          shadow-[0_25px_80px_rgba(5,59,51,0.10)]
           sm:h-[600px]
           lg:h-[620px]
         "
       >
         {/* Card Header */}
         <div className="flex items-center justify-between px-6 pt-6 sm:px-10 sm:pt-10">
-          <span className="text-sm font-medium tracking-wider text-[#777C86]">
+          <span className="text-sm font-medium tracking-wider text-muted">
             / {service.number}
           </span>
 
-          <span className="rounded-full border border-black/10 bg-white/60 px-4 py-2 text-xs font-medium uppercase tracking-wider text-[#555A64]">
+          <span className="rounded-full border border-black/10 bg-white/60 px-4 py-2 text-xs font-medium uppercase tracking-wider text-forest/80">
             {service.title}
           </span>
         </div>
@@ -234,7 +238,7 @@ function ServiceCard({
                 {service.title}
               </h3>
 
-              <p className="mt-6 max-w-lg text-sm leading-6 text-[#626773] sm:text-base sm:leading-7">
+              <p className="mt-6 max-w-lg text-sm leading-6 text-muted sm:text-base sm:leading-7">
                 {service.description}
               </p>
             </div>
@@ -244,7 +248,7 @@ function ServiceCard({
                 {service.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-black/10 bg-white/60 px-3 py-1.5 text-xs text-[#555A64]"
+                    className="rounded-full border border-black/10 bg-white/60 px-3 py-1.5 text-xs text-forest/80"
                   >
                     {tag}
                   </span>
@@ -257,7 +261,7 @@ function ServiceCard({
               >
                 Explore service
 
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#111318] text-white transition-transform duration-300 group-hover:translate-x-1">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-forest text-white transition-transform duration-300 group-hover:translate-x-1">
                   <ArrowUpRight size={15} />
                 </span>
               </a>
@@ -340,7 +344,7 @@ function ServiceCard({
         font-medium
         uppercase
         tracking-[0.15em]
-        text-[#333]
+        text-forest
         backdrop-blur-md
       "
     >

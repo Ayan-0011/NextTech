@@ -46,7 +46,7 @@ export default function TechnicalVisual() {
               y2={n.y}
               strokeWidth={active === n.slug ? 2 : 1.5}
               className={`transition-colors duration-200 ${
-                active === n.slug ? 'stroke-blue' : 'stroke-slate-300'
+                active === n.slug ? 'stroke-accent' : 'stroke-white/25'
               }`}
             />
           ))}
@@ -55,7 +55,7 @@ export default function TechnicalVisual() {
               <motion.circle
                 key={n.slug}
                 r={3.5}
-                className="fill-blue"
+                className="fill-accent"
                 initial={{ cx: CENTER.x, cy: CENTER.y, opacity: 0 }}
                 animate={{ cx: [CENTER.x, n.x], cy: [CENTER.y, n.y], opacity: [0, 1, 1, 0] }}
                 transition={{
@@ -74,16 +74,16 @@ export default function TechnicalVisual() {
           className="absolute -translate-x-1/2 -translate-y-1/2"
           style={{ left: pct(CENTER.x, W), top: pct(CENTER.y, H) }}
         >
-          <div className="relative h-[72px] w-[72px] rounded-[18px] shadow-lg shadow-navy/15">
+          <div className="relative h-[72px] w-[72px] rounded-[18px] shadow-lg shadow-black/30">
             {!reduceMotion && (
               <motion.span
                 aria-hidden="true"
-                className="absolute inset-0 rounded-[18px] border border-blue"
+                className="absolute inset-0 rounded-[18px] border border-accent"
                 animate={{ scale: [1, 1.55], opacity: [0.35, 0] }}
                 transition={{ duration: 3, ease: 'easeOut', repeat: Infinity }}
               />
             )}
-            <NLogo size={72} />
+            <NLogo size={72} light />
           </div>
         </div>
 
@@ -98,10 +98,10 @@ export default function TechnicalVisual() {
               onMouseEnter={() => setActive(n.slug)}
               onFocus={() => setActive(n.slug)}
               onClick={() => setActive(n.slug)}
-              className={`absolute flex h-11 w-[26%] min-w-[84px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-xl border bg-surface text-sm font-semibold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2 ${
+              className={`absolute flex h-11 w-[26%] min-w-[84px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-xl border bg-surface text-sm font-semibold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-forest ${
                 isActive
-                  ? 'border-blue text-blue shadow-sm'
-                  : 'border-border text-navy hover:border-blue/40'
+                  ? 'border-accent text-brand shadow-md shadow-black/20'
+                  : 'border-transparent text-forest shadow-sm shadow-black/10 hover:border-accent/60'
               }`}
               style={{ left: pct(n.x, W), top: pct(n.y, H) }}
             >
@@ -116,7 +116,7 @@ export default function TechnicalVisual() {
       <div
         id="hub-tools"
         aria-live="polite"
-        className="mt-4 min-h-[290px] rounded-xl border border-border bg-surface p-4 sm:min-h-[184px]"
+        className="mt-4 min-h-[290px] rounded-xl border border-white/10 bg-surface p-4 shadow-xl shadow-black/20 sm:min-h-[184px]"
       >
         <motion.div
           key={current.slug}
@@ -130,7 +130,7 @@ export default function TechnicalVisual() {
           </div>
 
           <div className="min-w-0">
-            <p className="text-sm font-semibold text-navy">{current.service.title}</p>
+            <p className="text-sm font-semibold text-forest">{current.service.title}</p>
             <p className="mt-0.5 text-xs text-muted">{current.service.short}</p>
             <ul className="mt-3 flex list-none flex-wrap gap-1.5">
               {current.service.tech.map((tool, i) => (
@@ -147,7 +147,7 @@ export default function TechnicalVisual() {
             </ul>
             <Link
               to={`/services#${current.slug}`}
-              className="group mt-3 inline-flex items-center gap-1.5 rounded text-sm font-semibold text-blue transition-all duration-200 hover:gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue" >
+              className="group mt-3 inline-flex items-center gap-1.5 rounded text-sm font-semibold text-brand transition-all duration-200 hover:gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand" >
               See {current.service.title}
               <ArrowRight size={14} aria-hidden="true" />
             </Link>

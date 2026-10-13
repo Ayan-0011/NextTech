@@ -7,16 +7,16 @@ export default function CareerCard({ job }) {
   const [expanded, setExpanded] = useState(false)
 
   return (
-    <div className="bg-surface border border-border rounded-xl overflow-hidden transition-all duration-300 hover:shadow-md hover:border-blue/20">
+    <div className="bg-surface border border-border rounded-xl overflow-hidden transition-all duration-300 hover:shadow-md hover:border-brand/20">
       <button
-        className="w-full text-left p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-inset"
+        className="w-full text-left p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-inset"
         onClick={() => setExpanded(!expanded)}
         aria-expanded={expanded}
       >
         <div className="flex items-start justify-between gap-4">
           <div>
             <h3 className="text-lg font-bold text-text">{title}</h3>
-            <p className="text-sm text-blue font-medium mt-0.5">{tech}</p>
+            <p className="text-sm text-brand font-medium mt-0.5">{tech}</p>
             <div className="flex flex-wrap gap-4 mt-3">
               <span className="flex items-center gap-1.5 text-xs text-muted">
                 <MapPin size={13} /> {location}
@@ -55,7 +55,7 @@ export default function CareerCard({ job }) {
                   <ul className="space-y-2">
                     {responsibilities.map((r) => (
                       <li key={r} className="flex items-start gap-2 text-sm text-text">
-                        <span className="w-1.5 h-1.5 rounded-full bg-blue mt-2 flex-shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2 flex-shrink-0" />
                         {r}
                       </li>
                     ))}
@@ -68,7 +68,7 @@ export default function CareerCard({ job }) {
                   <ul className="space-y-2">
                     {requirements.map((r) => (
                       <li key={r} className="flex items-start gap-2 text-sm text-text">
-                        <span className="w-1.5 h-1.5 rounded-full bg-blue mt-2 flex-shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2 flex-shrink-0" />
                         {r}
                       </li>
                     ))}
@@ -79,7 +79,7 @@ export default function CareerCard({ job }) {
               <div className="mt-6 pt-5 border-t border-border">
                 <a
                   href="mailto:careers@nexatech.in"
-                  className="inline-flex items-center gap-2 bg-navy text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-navy/90 transition-all hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 bg-forest text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-forest/90 transition-all hover:-translate-y-0.5"
                 >
                   Apply for this role <ArrowRight size={15} />
                 </a>

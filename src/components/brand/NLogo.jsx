@@ -1,6 +1,6 @@
 export default function NLogo({ size = 32, light = false, className = '' }) {
-  const tile = light ? '#FFFFFF' : '#0B1F3A'
-  const stem = light ? '#0B1F3A' : '#FFFFFF'
+  const tile = light ? '#FFFFFF' : '#053B33'
+  const stem = light ? '#053B33' : '#FFFFFF'
 
   return (
     <svg
@@ -16,7 +16,7 @@ export default function NLogo({ size = 32, light = false, className = '' }) {
       <rect x="19.5" y="7.5" width="5" height="17" fill={stem} />
       <path
         d="M7.5 7.5h5L24.5 24.5h-5z"
-        fill="#2563EB"
+        fill={light ? '#047857' : '#10B981'}
         stroke={tile}
         strokeWidth="2"
         paintOrder="stroke"

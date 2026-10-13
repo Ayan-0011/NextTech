@@ -48,10 +48,10 @@ export default function WhyUs() {
     <section className="section-padding bg-bg">
       <div className="container">
         <FadeIn className="max-w-xl mb-16">
-          <span className="text-xs font-semibold uppercase tracking-widest text-blue mb-4 block">
+          <span className="text-xs font-semibold uppercase tracking-widest text-brand mb-4 block">
             Why Nexa Tech
           </span>
-          <h2 className="heading-section text-navy">Why teams choose us</h2>
+          <h2 className="heading-section text-forest">Why teams choose us</h2>
         </FadeIn>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -61,7 +61,7 @@ export default function WhyUs() {
               {/* Progress bar */}
               <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-border">
                 <div
-                  className="bg-blue w-full transition-all duration-500"
+                  className="bg-brand w-full transition-all duration-500"
                   style={{ height: `${((active + 1) / principles.length) * 100}%` }}
                 />
               </div>
@@ -76,8 +76,8 @@ export default function WhyUs() {
                       active === i ? 'opacity-100' : 'opacity-40'
                     }`}
                   >
-                    <span className="text-xs font-bold text-blue tracking-widest">{p.number}</span>
-                    <p className={`font-semibold mt-0.5 ${active === i ? 'text-navy text-xl' : 'text-text text-base'}`}>
+                    <span className="text-xs font-bold text-brand tracking-widest">{p.number}</span>
+                    <p className={`font-semibold mt-0.5 ${active === i ? 'text-forest text-xl' : 'text-text text-base'}`}>
                       {p.title}
                     </p>
                   </button>
@@ -94,14 +94,14 @@ export default function WhyUs() {
                 ref={(el) => (refs.current[i] = el)}
                 className={`p-8 rounded-xl border transition-all duration-500 ${
                   active === i
-                    ? 'border-blue/30 bg-soft-blue shadow-sm'
+                    ? 'border-brand/30 bg-mint-soft shadow-sm'
                     : 'border-border bg-surface'
                 }`}
               >
-                <span className="text-xs font-bold text-blue tracking-widest mb-3 block">
+                <span className="text-xs font-bold text-brand tracking-widest mb-3 block">
                   {p.number}
                 </span>
-                <h3 className="text-xl font-bold text-navy mb-3">{p.title}</h3>
+                <h3 className="text-xl font-bold text-forest mb-3">{p.title}</h3>
                 <p className="text-muted leading-relaxed">{p.body}</p>
               </div>
             ))}

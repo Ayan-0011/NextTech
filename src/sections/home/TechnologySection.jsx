@@ -1,5 +1,7 @@
 
 import FadeIn from '../../components/animations/FadeIn'
+import Logo from '../../components/brand/Logo'
+import NLogo from '../../components/brand/NLogo'
 import './TechnologySection.css'
 
 
@@ -12,7 +14,7 @@ const technologies = [
   { name: 'MongoDB', slug: 'mongodb', color: '#47A248', angle: 150, orbit: 240 },
   { name: 'PostgreSQL', slug: 'postgresql', color: '#4169E1', angle: 180, orbit: 240 },
   { name: 'Python', slug: 'python', color: '#3776AB', angle: 210, orbit: 240 },
-  { name: 'AWS', slug: 'amazonaws', color: '#FF9900', angle: 240, orbit: 240 },
+  { name: 'AWS', slug: 'redux', color: '#FF9900', angle: 240, orbit: 240 },
   { name: 'Docker', slug: 'docker', color: '#2496ED', angle: 270, orbit: 240 },
   { name: 'Git', slug: 'git', color: '#F05032', angle: 300, orbit: 240 },
   { name: 'GitHub', slug: 'github', color: '#111827', angle: 330, orbit: 240 },
@@ -46,11 +48,11 @@ export default function TechnologySection() {
     <section className="section-padding bg-bg overflow-hidden">
       <div className="container">
         <FadeIn className="mb-8 text-center">
-          <span className="mb-4 block text-xs font-semibold uppercase tracking-[0.2em] text-blue">
+          <span className="mb-4 block text-xs font-semibold uppercase tracking-[0.2em] text-brand">
             Technology
           </span>
 
-          <h2 className="heading-section text-navy">
+          <h2 className="heading-section text-forest">
             Technology that fits the problem
           </h2>
         </FadeIn>
@@ -64,7 +66,7 @@ export default function TechnologySection() {
             <div className="tech-orbit-center">
               <div className="tech-brand-mark">
                 
-                <span>NextTech</span>
+                <NLogo size={80}/>
               </div>
             </div>
 

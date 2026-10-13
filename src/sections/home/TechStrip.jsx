@@ -21,7 +21,7 @@ export default function TechStrip() {
               key={i}
               className="inline-flex items-center gap-2 mx-6 text-sm font-semibold text-muted/70 flex-shrink-0"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-border" />
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-300" />
               {tech}
             </span>
           ))}

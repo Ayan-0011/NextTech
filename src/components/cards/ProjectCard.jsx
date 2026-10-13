@@ -35,14 +35,14 @@ export default function ProjectCard({ project, featured = false }) {
         <div className="p-6">
           <div className="flex items-start justify-between mb-3">
             <div>
-              <h3 className="text-lg font-bold text-text group-hover:text-blue transition-colors duration-200">
+              <h3 className="text-lg font-bold text-text group-hover:text-brand transition-colors duration-200">
                 {name}
               </h3>
               <p className="text-sm text-muted mt-1">{tagline}</p>
             </div>
             <ArrowRight
               size={18}
-              className="text-muted group-hover:text-blue group-hover:translate-x-1 mt-0.5 flex-shrink-0 transition-all duration-300"
+              className="text-muted group-hover:text-brand group-hover:translate-x-1 mt-0.5 flex-shrink-0 transition-all duration-300"
             />
           </div>
           <div className="flex flex-wrap gap-2 mt-4">

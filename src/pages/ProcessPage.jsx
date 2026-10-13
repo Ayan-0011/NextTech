@@ -1,14 +1,16 @@
 // import ProcessSection from '../sections/home/ProcessSection'
 import FadeIn from '../components/animations/FadeIn'
 import FinalCTA from '../sections/home/FinalCTA'
+import EmeraldBackdrop from '../components/ui/EmeraldBackdrop'
 
 export default function ProcessPage() {
   return (
     <main>
-      <section className="pt-28 pb-20 bg-navy text-white">
-        <div className="container">
+      <section data-surface="dark" className="relative overflow-hidden pt-28 pb-20 bg-forest text-white">
+        <EmeraldBackdrop />
+        <div className="container relative z-10">
           <FadeIn className="max-w-2xl">
-            <span className="text-xs font-semibold uppercase tracking-widest text-blue/70 mb-4 block">
+            <span className="text-xs font-semibold uppercase tracking-widest text-emerald-300 mb-4 block">
               Process
             </span>
             <h1 className="heading-hero text-white mb-6">
@@ -27,7 +29,7 @@ export default function ProcessPage() {
       <section className="section-padding bg-bg">
         <div className="container">
           <FadeIn className="max-w-xl mb-12">
-            <h2 className="heading-section text-navy">A few things we believe</h2>
+            <h2 className="heading-section text-forest">A few things we believe</h2>
           </FadeIn>
           <div className="grid md:grid-cols-2 gap-6">
             {[
@@ -50,7 +52,7 @@ export default function ProcessPage() {
             ].map((item) => (
               <FadeIn key={item.title}>
                 <div className="bg-surface border border-border rounded-xl p-7">
-                  <h3 className="text-lg font-bold text-navy mb-3">{item.title}</h3>
+                  <h3 className="text-lg font-bold text-forest mb-3">{item.title}</h3>
                   <p className="text-muted leading-relaxed">{item.body}</p>
                 </div>
               </FadeIn>

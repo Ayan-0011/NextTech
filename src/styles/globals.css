@@ -3,14 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --bg: #F8FAFC;
+  --bg: #F8FBF9;
   --surface: #FFFFFF;
-  --navy: #0B1F3A;
-  --text: #0F172A;
-  --muted: #64748B;
-  --blue: #2563EB;
-  --soft-blue: #EFF6FF;
-  --border: #E2E8F0;
+  --forest: #053B33;
+  --forest-deep: #042F29;
+  --brand: #047857;
+  --accent: #10B981;
+  --mint: #D1FAE5;
+  --mint-soft: #ECFDF5;
+  --text: #111827;
+  --muted: #6B7280;
+  --border: #E2EDE8;
 }
 
 *,
@@ -43,8 +46,13 @@ body {
 }
 
 :focus-visible {
-  outline: 3px solid #2563EB;
+  outline: 3px solid var(--brand);
   outline-offset: 3px;
+}
+
+/* Dark emerald surfaces need a lighter ring to stay visible (WCAG 2.4.7 / 1.4.11) */
+[data-surface="dark"] :focus-visible {
+  outline-color: #6EE7B7;
 }
 
 /* Reduced motion */

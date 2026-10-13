@@ -44,7 +44,7 @@ export default function Navbar() {
           aria-label="Main navigation"
           className={`mx-auto border border-border backdrop-blur-md transition-all duration-300 ease-out ${scrolled
               ? 'max-w-full rounded-none border-x-0 border-t-0 bg-white/95 shadow-sm'
-              : 'max-w-[1152px] rounded-[28px] bg-white shadow-[0_8px_30px_-12px_rgba(11,31,58,0.28)]'
+              : 'max-w-[1152px] rounded-[28px] bg-white shadow-[0_8px_30px_-12px_rgba(5,59,51,0.28)]'
             }`}
         >
           <div
@@ -60,9 +60,9 @@ export default function Navbar() {
                   <NavLink
                     to={link.to}
                     className={({ isActive }) =>
-                      `block rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue ${isActive
-                        ? 'bg-soft-blue text-blue'
-                        : 'text-muted hover:bg-slate-100 hover:text-text'
+                      `block rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${isActive
+                        ? 'bg-mint-soft text-brand'
+                        : 'text-muted hover:bg-mint-soft hover:text-forest'
                       }`
                     }
                   >
@@ -75,7 +75,11 @@ export default function Navbar() {
 
             {/* Let's Talk */}
             <Link  to="/contact"
+<<<<<<< HEAD
               className="group mx-1 inline-flex items-center gap-2 rounded-full bg-navy px-4 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-navy-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2 md:px-5" >
+=======
+              className="group mx-1 inline-flex items-center gap-2 rounded-full bg-brand px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-brand/25 transition-colors duration-200 hover:bg-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 md:px-5" >
+>>>>>>> 4c665a3 (Theme Changes)
               Let's Talk
               <ArrowRight
                 size={15}
@@ -86,7 +90,7 @@ export default function Navbar() {
 
             {/* Hamburger */}
             <button
-              className="flex h-10 w-10 items-center justify-center rounded-full text-text transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue md:hidden"
+              className="flex h-10 w-10 items-center justify-center rounded-full text-text transition-colors hover:bg-mint-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand md:hidden"
               onClick={() => setMenuOpen(true)}
               aria-label="Open navigation menu"
               aria-expanded={menuOpen}

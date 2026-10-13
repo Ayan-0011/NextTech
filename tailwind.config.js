@@ -7,15 +7,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: '#F8FAFC',
+        // Deep Emerald + White palette
+        bg: '#F8FBF9',              // page background, a hair off-white with a green tint
         surface: '#FFFFFF',
-        navy: '#0B1F3A',
-        'navy-light': '#112847',
-        text: '#0F172A',
-        muted: '#64748B',
-        blue: '#2563EB',
-        'soft-blue': '#EFF6FF',
-        border: '#E2E8F0',
+        forest: '#053B33',          // primary dark green (dark sections, headings)
+        'forest-light': '#075E4D',  // hover state for forest surfaces
+        'forest-deep': '#042F29',   // footer, one step below forest
+        brand: '#047857',           // primary emerald: buttons, links, active states
+        'brand-dark': '#065F46',    // hover state for brand
+        accent: '#10B981',          // bright emerald: highlights on dark, glows
+        mint: '#D1FAE5',            // soft mint
+        'mint-soft': '#ECFDF5',     // light green background
+        text: '#111827',
+        muted: '#6B7280',
+        border: '#E2EDE8',          // green-tinted hairline
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

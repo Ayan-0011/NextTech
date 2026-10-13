@@ -25,8 +25,8 @@ export const projects = [
       'Staff onboarding time reduced significantly with a simpler interface',
       'Customer lookup time dropped from minutes to seconds',
     ],
-    color: '#EFF6FF',
-    accent: '#2563EB',
+    color: '#ECFDF5',
+    accent: '#047857',
   },
   {
     slug: 'fleetops',
@@ -54,8 +54,8 @@ export const projects = [
       'Delivery status visibility improved across the team',
       'End-of-day reporting automated for management',
     ],
-    color: '#F0FDF4',
-    accent: '#16A34A',
+    color: '#F0FDFA',
+    accent: '#0F766E',
   },
   {
     slug: 'careconnect',

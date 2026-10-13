@@ -11,7 +11,7 @@ export default function MobileMenu({ open, onClose, links }) {
         <>
           {/* Backdrop */}
           <motion.div
-            className="fixed inset-0 z-50 bg-navy/60 backdrop-blur-sm"
+            className="fixed inset-0 z-50 bg-forest/60 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -36,7 +36,7 @@ export default function MobileMenu({ open, onClose, links }) {
               <Link
                 to="/"
                 onClick={onClose}
-                className="flex items-center gap-2.5 font-bold text-navy text-lg">
+                className="flex items-center gap-2.5 font-bold text-forest text-lg">
                 <Logo size={26} onClick={onClose} />
                
               </Link>
@@ -57,7 +57,7 @@ export default function MobileMenu({ open, onClose, links }) {
                   onClick={onClose}
                   className={({ isActive }) =>
                     `px-3 py-3.5 text-base font-medium rounded-lg transition-colors ${
-                      isActive ? 'text-blue bg-soft-blue' : 'text-text hover:bg-bg'
+                      isActive ? 'text-brand bg-mint-soft' : 'text-text hover:bg-mint-soft/60'
                     }`
                   }
                 >
@@ -72,7 +72,7 @@ export default function MobileMenu({ open, onClose, links }) {
               <Link
                 to="/contact"
                 onClick={onClose}
-                className="w-full inline-flex items-center justify-center gap-2 bg-navy text-white text-sm font-semibold px-5 py-3.5 rounded-lg hover:bg-navy/90 transition-all" >
+                className="w-full inline-flex items-center justify-center gap-2 bg-brand text-white text-sm font-semibold px-5 py-3.5 rounded-lg hover:bg-forest transition-all" >
                 Let's Talk <span aria-hidden="true">→</span>
               </Link>
             </div>

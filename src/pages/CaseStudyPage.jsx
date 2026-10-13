@@ -33,7 +33,7 @@ export default function CaseStudyPage() {
             >
               {project.category}
             </div>
-            <h1 className="heading-hero text-navy mb-4">{project.name}</h1>
+            <h1 className="heading-hero text-forest mb-4">{project.name}</h1>
             <p className="text-xl text-muted leading-relaxed max-w-2xl">{project.description}</p>
           </FadeIn>
 
@@ -49,7 +49,7 @@ export default function CaseStudyPage() {
                 <dt className="text-xs font-semibold uppercase tracking-widest text-muted mb-1">
                   {item.label}
                 </dt>
-                <dd className="text-sm font-semibold text-navy">{item.value}</dd>
+                <dd className="text-sm font-semibold text-forest">{item.value}</dd>
               </div>
             ))}
           </FadeIn>
@@ -61,25 +61,25 @@ export default function CaseStudyPage() {
         <div className="container max-w-3xl">
           {/* Challenge */}
           <FadeIn className="mb-14">
-            <h2 className="heading-sm text-navy mb-4">The challenge</h2>
+            <h2 className="heading-sm text-forest mb-4">The challenge</h2>
             <p className="text-lg text-muted leading-relaxed">{project.challenge}</p>
           </FadeIn>
 
           {/* Approach */}
           <FadeIn className="mb-14">
-            <h2 className="heading-sm text-navy mb-4">Our approach</h2>
+            <h2 className="heading-sm text-forest mb-4">Our approach</h2>
             <p className="text-lg text-muted leading-relaxed">{project.approach}</p>
           </FadeIn>
 
           {/* Solution */}
           <FadeIn className="mb-14">
-            <h2 className="heading-sm text-navy mb-4">The solution</h2>
+            <h2 className="heading-sm text-forest mb-4">The solution</h2>
             <p className="text-lg text-muted leading-relaxed">{project.solution}</p>
           </FadeIn>
 
           {/* Features */}
           <FadeIn className="mb-14">
-            <h2 className="heading-sm text-navy mb-6">Features</h2>
+            <h2 className="heading-sm text-forest mb-6">Features</h2>
             <ul className="grid sm:grid-cols-2 gap-3">
               {project.features.map((feature) => (
                 <li
@@ -98,7 +98,7 @@ export default function CaseStudyPage() {
 
           {/* Technology */}
           <FadeIn className="mb-14">
-            <h2 className="heading-sm text-navy mb-4">Technology</h2>
+            <h2 className="heading-sm text-forest mb-4">Technology</h2>
             <div className="flex flex-wrap gap-3">
               {project.tech.map((t) => (
                 <span
@@ -113,7 +113,7 @@ export default function CaseStudyPage() {
 
           {/* Results */}
           <FadeIn className="mb-14">
-            <h2 className="heading-sm text-navy mb-6">Results</h2>
+            <h2 className="heading-sm text-forest mb-6">Results</h2>
             <ul className="space-y-4">
               {project.results.map((result) => (
                 <li
@@ -143,14 +143,14 @@ export default function CaseStudyPage() {
             className="group inline-flex items-center gap-4"
           >
             <div>
-              <h3 className="text-2xl font-bold text-navy group-hover:text-blue transition-colors">
+              <h3 className="text-2xl font-bold text-forest group-hover:text-brand transition-colors">
                 {next.name}
               </h3>
               <p className="text-muted text-sm mt-1">{next.tagline}</p>
             </div>
             <ArrowRight
               size={22}
-              className="text-muted group-hover:text-blue group-hover:translate-x-2 transition-all duration-300"
+              className="text-muted group-hover:text-brand group-hover:translate-x-2 transition-all duration-300"
             />
           </Link>
         </div>
