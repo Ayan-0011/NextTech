@@ -9,15 +9,11 @@ export default function NotFound() {
       style={{ background: 'var(--bg)', color: 'var(--text)' }}
     >
       {/* Background Decoration */}
-      <div
-        className="absolute -top-32 -right-32 w-96 h-96 rounded-full blur-3xl opacity-40 pointer-events-none"
-        style={{ background: 'var(--mint)' }}
-      />
+      <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full blur-3xl opacity-40 pointer-events-none"
+        style={{ background: 'var(--mint)' }} />
 
-      <div
-        className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full blur-3xl opacity-50 pointer-events-none"
-        style={{ background: 'var(--mint-soft)' }}
-      />
+      <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full blur-3xl opacity-50 pointer-events-none"
+        style={{ background: 'var(--mint-soft)' }} />
 
       <div className="container relative z-10">
         <FadeIn className="max-w-2xl mx-auto text-center">
