@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom'
-import NLogo from '../brand/NLogo'
 import { Linkedin, Github, Instagram } from 'lucide-react'
 import Logo from '../brand/Logo'
-import EmeraldBackdrop from '../ui/EmeraldBackdrop'
 
 const footerLinks = {
   Company: [
@@ -16,9 +14,7 @@ const footerLinks = {
     { label: 'Custom Software', to: '/services#custom-software' },
     { label: 'AI & Automation', to: '/services#ai-automation' },
   ],
-  Work: [
-    { label: 'Case Studies', to: '/work' },
-  ],
+  Work: [{ label: 'Case Studies', to: '/work' }],
   Contact: [
     { label: 'hello@nexatech.in', href: 'mailto:hello@nexatech.in' },
     { label: '+91 79 4000 0000', href: 'tel:+917940000000' },
@@ -26,95 +22,92 @@ const footerLinks = {
   ],
 }
 
+const socials = [
+  { label: 'LinkedIn', href: 'https://linkedin.com', Icon: Linkedin },
+  { label: 'GitHub', href: 'https://github.com', Icon: Github },
+  { label: 'Instagram', href: 'https://instagram.com', Icon: Instagram },
+]
+
+const linkClass =
+  'text-sm text-emerald-800 hover:text-emerald-950 hover:underline underline-offset-4 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 rounded-sm break-words'
+
 export default function Footer() {
   return (
-    <footer data-surface="dark" className="relative overflow-hidden bg-forest-deep text-white pt-20">
-      <EmeraldBackdrop variant="subtle" />
-      <div className="container relative z-10 py-17 ">
-        {/* Top row */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 mb-12">
+    <footer
+      data-surface="light"
+      className="relative overflow-hidden border-t border-emerald-100 bg-gradient-to-b from-white via-emerald-50/50 to-emerald-100/60 text-emerald-800"
+    >
+      {/* soft glow, decorative only */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-32 -right-32 h-80 w-80 rounded-full bg-emerald-200/40 blur-3xl"
+      />
+
+      <div className="container relative z-10 py-14 sm:py-16 lg:py-20">
+        {/* Main grid */}
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-x-8">
           {/* Brand */}
-          <div className="md:col-span-2">
-            <Link to="/" className="inline-flex items-center gap-2.5 font-bold text-lg mb-4">
-                <Logo variant="light" size={30} />
+          <div className="col-span-2 md:col-span-4 lg:col-span-2">
+            <Link to="/" aria-label="Nexa Tech home" className="inline-flex items-center">
+              <Logo variant="dark" size={30} />
             </Link>
-            <p className="text-white/60 text-sm leading-relaxed max-w-xs mt-4">
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-emerald-800">
               Building useful digital products for growing businesses.
             </p>
-            <div className="flex items-center gap-3 mt-6">
-              <a
-                href="https://linkedin.com"
-                aria-label="LinkedIn"
-                className="w-9 h-9 rounded-lg border border-white/20 flex items-center justify-center text-white/60 hover:text-emerald-300 hover:border-emerald-300/50 transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Linkedin size={16} />
-              </a>
-              <a
-                href="https://github.com"
-                aria-label="GitHub"
-                className="w-9 h-9 rounded-lg border border-white/20 flex items-center justify-center text-white/60 hover:text-emerald-300 hover:border-emerald-300/50 transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github size={16} />
-              </a>
-              <a
-                href="https://instagram.com"
-                aria-label="Instagram"
-                className="w-9 h-9 rounded-lg border border-white/20 flex items-center justify-center text-white/60 hover:text-emerald-300 hover:border-emerald-300/50 transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Instagram size={16} />
-              </a>
-            </div>
+            <ul className="mt-6 flex items-center gap-3">
+              {socials.map(({ label, href, Icon }) => (
+                <li key={label}>
+                  <a
+                    href={href}
+                    aria-label={label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex h-10 w-10 items-center justify-center rounded-lg border border-emerald-200 bg-white/70 text-emerald-700 transition-colors hover:border-emerald-700 hover:bg-emerald-700 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
+                  >
+                    <Icon size={16} aria-hidden="true" />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Links */}
+          {/* Link columns */}
           {Object.entries(footerLinks).map(([section, links]) => (
-            <div key={section}>
-              <h3 className="text-xs font-semibold uppercase tracking-widest text-emerald-200/70 mb-4">
+            <nav key={section} aria-label={section} className="min-w-0">
+              <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-emerald-600">
                 {section}
               </h3>
-              <ul className="space-y-2.5">
+              <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link.label}>
                     {link.href ? (
-                      <a
-                        href={link.href}
-                        className="text-sm text-white/65 hover:text-emerald-300 transition-colors"
-                      >
+                      <a href={link.href} className={linkClass}>
                         {link.label}
                       </a>
                     ) : link.to ? (
-                      <Link
-                        to={link.to}
-                        className="text-sm text-white/65 hover:text-emerald-300 transition-colors"
-                      >
+                      <Link to={link.to} className={linkClass}>
                         {link.label}
                       </Link>
                     ) : (
-                      <span className="text-sm text-white/60">{link.label}</span>
+                      <span className="text-sm text-emerald-800">{link.label}</span>
                     )}
                   </li>
                 ))}
               </ul>
-            </div>
+            </nav>
           ))}
         </div>
 
         {/* Bottom row */}
-        <div className="border-t border-emerald-200/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-emerald-100/55">
-            © {new Date().getFullYear()} Nexa Tech. Demo website — fictional company.
+        <div className="mt-12 flex flex-col-reverse items-start justify-between gap-4 border-t border-emerald-200/60 pt-6 sm:mt-14 sm:flex-row sm:items-center">
+          <p className="text-xs text-emerald-700">
+            © {new Date().getFullYear()} NexaTech. Demo website — company.
           </p>
           <div className="flex items-center gap-6">
-            <Link to="/privacy-policy" className="text-xs text-emerald-100/55 hover:text-emerald-300 transition-colors">
+            <Link to="/privacy-policy" className={`${linkClass} text-xs`}>
               Privacy Policy
             </Link>
-            <Link to="/terms" className="text-xs text-emerald-100/55 hover:text-emerald-300 transition-colors">
+            <Link to="/terms" className={`${linkClass} text-xs`}>
               Terms
             </Link>
           </div>

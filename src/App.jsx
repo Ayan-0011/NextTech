@@ -16,6 +16,8 @@ import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/page-transition/ScrollToTop";
 import PageTransition from "./components/page-transition/PageTransition";
 import BackToTopButton from "./components/buttons/BackToTopButton";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms from "./pages/Terms";
 
 function AppContent() {
   const location = useLocation();
@@ -29,6 +31,9 @@ function AppContent() {
     "/careers",
     "/life",
     "/contact",
+    "/life-at-company",
+    "/privacy-policy",
+    "/terms"
   ].includes(location.pathname) &&
     !/^\/work\/[^/]+$/.test(location.pathname);
 
@@ -47,8 +52,12 @@ function AppContent() {
         <Route path="/work/:slug" element={<CaseStudyPage />} />
         <Route path="/process" element={<ProcessPage />} />
         <Route path="/careers" element={<CareersPage />} />
-        <Route path="/life" element={<LifeAtCompanyPage />} />
+        <Route path="/life-at-company" element={<LifeAtCompanyPage />} />
         <Route path="/contact" element={<ContactPage />} />
+
+
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<Terms />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 
