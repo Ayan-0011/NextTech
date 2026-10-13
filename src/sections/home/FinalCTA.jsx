@@ -14,7 +14,7 @@ const points = [
 export default function FinalCTA() {
   return (
     <section
-      className="relative overflow-hidden py-24 md:py-32"
+      className="relative overflow-hidden py-24 md:py-12"
       style={{ backgroundColor: BASE }}
     >
       {/* Soft emerald glows */}
