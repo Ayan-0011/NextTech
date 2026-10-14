@@ -5,7 +5,6 @@ import Logo from '../brand/Logo'
 const footerLinks = {
   Company: [
     { label: 'About', to: '/about' },
-    { label: 'Life at Nexa Tech', to: '/life-at-company' },
     { label: 'Careers', to: '/careers' },
   ],
   Services: [

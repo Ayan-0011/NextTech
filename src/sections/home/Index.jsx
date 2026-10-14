@@ -173,10 +173,8 @@ function ServiceCard({
   const Icon = service.icon;
 
   return (
-    <div
-      ref={cardRef}
-      className="sticky top-20 flex h-screen items-center justify-center px-4 sm:px-8 lg:px-12"
-    >
+    <div ref={cardRef}
+      className="sticky top-20 flex h-screen items-center justify-center px-4 sm:px-8 lg:px-12" >
       <motion.article
         style={{
           scale,
@@ -255,12 +253,8 @@ function ServiceCard({
                 ))}
               </div>
 
-              <a
-                href="#contact"
-                className="group inline-flex items-center gap-2 text-sm font-medium"
-              >
+              <a href="#service"  className="group inline-flex items-center gap-2 text-sm font-medium" >
                 Explore service
-
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-forest text-white transition-transform duration-300 group-hover:translate-x-1">
                   <ArrowUpRight size={15} />
                 </span>
