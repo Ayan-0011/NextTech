@@ -4,6 +4,7 @@ import FinalCTA from '../sections/home/FinalCTA'
 import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import EmeraldBackdrop from '../components/ui/EmeraldBackdrop'
+import { getServicePath } from '../data/serviceDetails'
 
 export default function ServicesPage() {
   return (
@@ -53,7 +54,7 @@ export default function ServicesPage() {
                 </div>
 
                 <Link
-                  to="/contact"
+                  to={getServicePath(service.slug)}
                   className="inline-flex items-center gap-2 bg-brand text-white font-semibold px-6 py-3 rounded-lg hover:bg-brand/90 hover:-translate-y-0.5 transition-all duration-200"
                 >
                   Discuss a project <ArrowRight size={15} />

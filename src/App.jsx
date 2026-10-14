@@ -9,7 +9,6 @@ import WorkPage from "./pages/WorkPage";
 import CaseStudyPage from "./pages/CaseStudyPage";
 import ProcessPage from "./pages/ProcessPage";
 import CareersPage from "./pages/CareersPage";
-import LifeAtCompanyPage from "./pages/LifeAtCompanyPage";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
 
@@ -18,6 +17,7 @@ import PageTransition from "./components/page-transition/PageTransition";
 import BackToTopButton from "./components/buttons/BackToTopButton";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
+import ServiceDetailPage from "./pages/ServiceDetailPage";
 
 function AppContent() {
   const location = useLocation();
@@ -31,11 +31,10 @@ function AppContent() {
     "/careers",
     "/life",
     "/contact",
-    "/life-at-company",
     "/privacy-policy",
     "/terms"
   ].includes(location.pathname) &&
-    !/^\/work\/[^/]+$/.test(location.pathname);
+    !/^\/work|services\/[^/]+$/.test(location.pathname);
 
   return (
     <>
@@ -48,11 +47,11 @@ function AppContent() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
+        <Route path="/services/:slug" element={<ServiceDetailPage />} />
         <Route path="/work" element={<WorkPage />} />
         <Route path="/work/:slug" element={<CaseStudyPage />} />
         <Route path="/process" element={<ProcessPage />} />
         <Route path="/careers" element={<CareersPage />} />
-        <Route path="/life-at-company" element={<LifeAtCompanyPage />} />
         <Route path="/contact" element={<ContactPage />} />
 
 
