@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import { Scene, STAGE } from "./ProcessScenes";
-import "./ProcessTabs.css";
+import "../../styles/ProcessTabs.css";
 
 const EASE = [0.22, 1, 0.36, 1];
 

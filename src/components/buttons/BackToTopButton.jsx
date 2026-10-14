@@ -4,10 +4,7 @@ import { ArrowUp } from 'lucide-react'
 
 const SHOW_AFTER = 400 // px scrolled before the button appears
 
-/**
- * Fixed bottom-right button. Appears after some scrolling, shows page progress as a ring,
- * and scrolls smoothly back to the top.
- */
+
 export default function BackToTopButton() {
   const { scrollY, scrollYProgress } = useScroll()
   const reduceMotion = useReducedMotion()

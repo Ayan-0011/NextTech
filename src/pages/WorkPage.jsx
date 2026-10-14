@@ -1,19 +1,20 @@
 import { useState } from 'react'
 import { projects } from '../data/projects'
-import ProjectCard from '../components/cards/ProjectCard'
+import ProjectRow from '../components/cards/ProjectCard'
 import FadeIn from '../components/animations/FadeIn'
-import { StaggerContainer, StaggerItem } from '../components/animations/Stagger'
 import FinalCTA from '../sections/home/FinalCTA'
 import EmeraldBackdrop from '../components/ui/EmeraldBackdrop'
 
 const filters = ['All', 'Web', 'Mobile', 'SaaS', 'AI', 'Custom Software']
 
+const countFor = (f) =>
+  f === 'All' ? projects.length : projects.filter((p) => p.category === f).length
+
 export default function WorkPage() {
   const [active, setActive] = useState('All')
 
-  const filtered = active === 'All'
-    ? projects
-    : projects.filter((p) => p.category === active)
+  const filtered =
+    active === 'All' ? projects : projects.filter((p) => p.category === active)
 
   return (
     <main>
@@ -35,34 +36,40 @@ export default function WorkPage() {
         </div>
       </section>
 
-      {/* Filter + Grid */}
+      {/* Filter + List */}
       <section className="section-padding bg-bg">
         <div className="container">
-          {/* Filters */}
-          <FadeIn className="flex flex-wrap gap-2 mb-12">
-            {filters.map((f) => (
-              <button
-                key={f}
-                onClick={() => setActive(f)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                  active === f
-                    ? 'bg-forest text-white'
-                    : 'bg-surface border border-border text-muted hover:text-text hover:border-text/20'
-                }`}
-              >
-                {f}
-              </button>
-            ))}
+          <FadeIn>
+            <div role="group" aria-label="Filter projects by category" className="flex flex-wrap gap-2 mb-12">
+              {filters.map((f) => (
+                <button
+                  key={f}
+                  type="button"
+                  onClick={() => setActive(f)}
+                  aria-pressed={active === f}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest ${
+                    active === f
+                      ? 'bg-forest text-white'
+                      : 'bg-surface border border-border text-muted hover:text-text hover:border-text/20'
+                  }`}
+                >
+                  {f}
+                  <span className={`ml-2 text-xs ${active === f ? 'text-white/60' : 'text-muted/70'}`}>
+                    {countFor(f)}
+                  </span>
+                </button>
+              ))}
+            </div>
           </FadeIn>
 
           {filtered.length > 0 ? (
-            <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filtered.map((project) => (
-                <StaggerItem key={project.slug}>
-                  <ProjectCard project={project} />
-                </StaggerItem>
+            <div className="flex flex-col gap-8 lg:gap-10">
+              {filtered.map((project, i) => (
+                <FadeIn key={`${active}-${project.slug}`}>
+                  <ProjectRow project={project} index={i} />
+                </FadeIn>
               ))}
-            </StaggerContainer>
+            </div>
           ) : (
             <div className="text-center py-20">
               <p className="text-muted">No projects in this category yet.</p>

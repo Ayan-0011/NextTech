@@ -1,61 +1,78 @@
-import { ArrowRight } from 'lucide-react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { ArrowUpRight } from 'lucide-react'
+import ProjectVisual from '../ui/ProjectVisual'
 
-export default function ProjectCard({ project, featured = false }) {
-  const { slug, name, tagline, category, tech, color, accent } = project
+export default function ProjectRow({ project, index }) {
+  const [imgFailed, setImgFailed] = useState(false)
+  const { slug, name, tagline, category, description, industry, timeline, tech, image, accent } = project
+  const reversed = index % 2 === 1
 
   return (
-    <motion.div
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.25, ease: 'easeOut' }}>
-      <Link
-        to={`/work/${slug}`}
-        className="group block bg-surface border border-border rounded-xl overflow-hidden hover:shadow-lg hover:border-border/60 transition-all duration-300">
-        {/* Project visual */}
-        <div
-          className="h-48 flex items-center justify-center relative overflow-hidden"
-          style={{ backgroundColor: color }} >
-          <div className="flex flex-col items-center gap-2">
-            <div
-              className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-lg"
-              style={{ backgroundColor: accent }}>
-              {name[0]}
-            </div>
-            <span className="text-xs font-semibold" style={{ color: accent }}>
-              {category}
-            </span>
+    <article className="group overflow-hidden rounded-2xl border border-border bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-forest/30 hover:shadow-xl">
+      <div className="grid lg:grid-cols-2">
+        {/* Image - 50% */}
+        <Link
+          to={`/work/${slug}`}
+          aria-label={`View ${name} case study`}
+          className={`relative block aspect-[16/10] overflow-hidden lg:aspect-auto lg:min-h-[420px] ${
+            reversed ? 'lg:order-2' : ''
+          }`}
+        >
+          <div className="h-full w-full transition-transform duration-700 ease-out group-hover:scale-105">
+            {image && !imgFailed ? (
+              <img
+                src={image}
+                alt={`${name} project preview`}
+                loading="lazy"
+                onError={() => setImgFailed(true)}
+                className="h-full w-full object-cover"
+              />
+            ) : (
+              <ProjectVisual category={category} title={name} />
+            )}
           </div>
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            style={{ background: `linear-gradient(135deg, ${color}, ${color}cc)` }}
-          />
-        </div>
+          <div className="absolute inset-0 bg-forest/0 transition-colors duration-300 group-hover:bg-forest/10" />
+          <span className="absolute left-5 top-5 rounded-md bg-white/90 px-3 py-1 text-xs font-semibold text-forest backdrop-blur">
+            {category}
+          </span>
+        </Link>
 
-        {/* Content */}
-        <div className="p-6">
-          <div className="flex items-start justify-between mb-3">
-            <div>
-              <h3 className="text-lg font-bold text-text group-hover:text-brand transition-colors duration-200">
-                {name}
-              </h3>
-              <p className="text-sm text-muted mt-1">{tagline}</p>
-            </div>
-            <ArrowRight
-              size={18}
-              className="text-muted group-hover:text-brand group-hover:translate-x-1 mt-0.5 flex-shrink-0 transition-all duration-300"
-            />
-          </div>
-          <div className="flex flex-wrap gap-2 mt-4">
+        {/* Details - 50% */}
+        <div className="flex flex-col justify-center p-6 sm:p-10 lg:p-14">
+          <p
+            className="mb-4 text-xs font-semibold uppercase tracking-widest"
+            style={{ color: accent }}
+          >
+            {industry} <span aria-hidden="true">·</span> {timeline}
+          </p>
+          <h2 className="mb-2 text-2xl font-semibold text-text sm:text-3xl">{name}</h2>
+          <p className="mb-5 text-base font-medium text-forest">{tagline}</p>
+          <p className="mb-6 leading-relaxed text-muted">{description}</p>
+
+          <ul className="mb-8 flex flex-wrap gap-2" aria-label="Technologies used">
             {tech.map((t) => (
-              <span
-                key={t}
-                className="text-xs px-2.5 py-1 bg-bg rounded-md text-muted font-medium border border-border">
+              <li key={t} className="rounded-md border border-border px-3 py-1 text-xs text-muted">
                 {t}
-              </span>
+              </li>
             ))}
-          </div>
+          </ul>
+
+          <Link
+            to={`/work/${slug}`}
+            className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-forest focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-forest"
+          >
+            <span className="border-b border-transparent transition-colors group-hover:border-forest">
+              View case study
+            </span>
+            <ArrowUpRight
+              size={18}
+              aria-hidden="true"
+              className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-1"
+            />
+          </Link>
         </div>
-      </Link>
-    </motion.div>
+      </div>
+    </article>
   )
 }

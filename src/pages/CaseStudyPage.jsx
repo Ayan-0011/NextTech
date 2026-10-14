@@ -53,8 +53,17 @@ export default function CaseStudyPage() {
               </div>
             ))}
           </FadeIn>
+
         </div>
       </section>
+
+      <FadeIn delay={0.3} className="mt-12">
+        <img
+          src={project.image}
+          alt={`${project.name} project preview`}
+          className="w-full max-h-[480px] rounded-2xl border border-border object-cover"
+        />
+      </FadeIn>
 
       {/* Content */}
       <section className="section-padding bg-bg">

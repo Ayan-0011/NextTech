@@ -35,7 +35,7 @@ export default function Footer() {
   return (
     <footer
       data-surface="light"
-      className="relative overflow-hidden border-t border-emerald-100 bg-gradient-to-b from-white via-emerald-50/50 to-emerald-100/60 text-emerald-800"
+      className="relative overflow-hidden border-t py-10 md:py-0 border-emerald-100 bg-gradient-to-b from-white via-emerald-50/50 to-emerald-100/60 text-emerald-800"
     >
       {/* soft glow, decorative only */}
       <div

@@ -2,7 +2,8 @@
 import FadeIn from '../../components/animations/FadeIn'
 import Logo from '../../components/brand/Logo'
 import NLogo from '../../components/brand/NLogo'
-import './TechnologySection.css'
+import '../../styles/TechnologySection.css'
+
 
 
 const technologies = [
