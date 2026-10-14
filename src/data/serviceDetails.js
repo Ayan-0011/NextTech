@@ -429,8 +429,30 @@ export const serviceDetails = {
     },
   },
 }
+const matchRules = [
+  ['mobile-app-development', (s) => s.includes('mobile') || s.includes('android') || s.includes('ios')],
+  ['ai-automation', (s) => /(^|[^a-z])ai([^a-z]|$)/.test(s) || s.includes('automation')],
+  ['custom-software', (s) => s.includes('custom')],
+  ['web-development', (s) => s.includes('web')],
+]
 
-export const getServicePath = (slug) =>
-  serviceDetails[slug] ? `/services/${slug}` : '/contact'
+// Accepts a slug string or a service object ({ slug, title })
+export function resolveServiceSlug(input) {
+  if (!input) return null
+  const slug = typeof input === 'string' ? input : input.slug
+  if (slug && serviceDetails[slug]) return slug
 
-export const getContactPath = (slug) => `/contact?service=${encodeURIComponent(slug)}`
+  const text = (typeof input === 'string' ? input : `${input.slug ?? ''} ${input.title ?? ''}`).toLowerCase()
+  const match = matchRules.find(([, test]) => test(text))
+  return match ? match[0] : null
+}
+
+export const getServicePath = (input) => {
+  const slug = resolveServiceSlug(input)
+  return slug ? `/services/${slug}` : '/contact'
+}
+
+export const getContactPath = (input) => {
+  const slug = resolveServiceSlug(input)
+  return slug ? `/contact?service=${encodeURIComponent(slug)}` : '/contact'
+}

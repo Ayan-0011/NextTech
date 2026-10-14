@@ -11,6 +11,8 @@ import {
   LayoutDashboard,
   Cloud,
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { getServicePath } from '../../data/serviceDetails';
 
 const services = [
   {
@@ -253,12 +255,12 @@ function ServiceCard({
                 ))}
               </div>
 
-              <a href="#service"  className="group inline-flex items-center gap-2 text-sm font-medium" >
+              <Link to={getServicePath(service)}  className="group inline-flex items-center gap-2 text-sm font-medium" >
                 Explore service
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-forest text-white transition-transform duration-300 group-hover:translate-x-1">
                   <ArrowUpRight size={15} />
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
 
