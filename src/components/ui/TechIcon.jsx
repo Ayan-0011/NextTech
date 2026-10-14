@@ -1,17 +1,18 @@
 import {
-  SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiTailwindcss,
+  SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiTailwindcss,
   SiBootstrap, SiRedux, SiFramer, SiNodedotjs, SiExpress, SiMongodb, SiPostgresql,
-  SiMysql, SiSupabase, SiFirebase, SiFlutter, SiKotlin, SiSwift, SiOpenai, SiN8N,
+  SiMysql, SiSupabase, SiFirebase, SiFlutter, SiKotlin, SiSwift, SiN8N,
 } from 'react-icons/si'
+import { FaHtml5, FaCss3Alt } from 'react-icons/fa'
 import {
   Code2, Plug, Lock, KeyRound, Puzzle, Bell, CreditCard, HardDrive, Camera,
-  Cpu, Search, Webhook, Database, FileText, ShieldCheck, ClipboardList,
+  Cpu, Search, Webhook, Database, FileText, ShieldCheck, ClipboardList, Sparkles,
 } from 'lucide-react'
 
 // Brand logos: [Icon, brand color]
 const brandIcons = {
-  'HTML5': [SiHtml5, '#E34F26'],
-  'CSS3': [SiCss3, '#1572B6'],
+  'HTML5': [FaHtml5, '#E34F26'],
+  'CSS3': [FaCss3Alt, '#1572B6'],
   'JavaScript': [SiJavascript, '#F7DF1E'],
   'TypeScript': [SiTypescript, '#3178C6'],
   'React.js': [SiReact, '#61DAFB'],
@@ -35,7 +36,7 @@ const brandIcons = {
   'Flutter': [SiFlutter, '#02569B'],
   'Kotlin (Android native)': [SiKotlin, '#7F52FF'],
   'Swift (iOS native)': [SiSwift, '#F05138'],
-  'OpenAI API': [SiOpenai, '#000000'],
+  'OpenAI API': Sparkles,
   'n8n': [SiN8N, '#EA4B71'],
 }
 
