@@ -3,14 +3,7 @@
 import { ReactLenis } from 'lenis/react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import {
-  ArrowUpRight,
-  Globe2,
-  Smartphone,
-  Sparkles,
-  LayoutDashboard,
-  Cloud,
-} from 'lucide-react';
+import { ArrowUpRight, Globe2, Smartphone, Sparkles, LayoutDashboard, Cloud,} from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { getServicePath } from '../../data/serviceDetails';
 
@@ -20,9 +13,9 @@ const services = [
     title: 'Web Development',
     description:
       'We build fast, scalable websites and web applications that turn ideas into reliable digital products.',
-    tags: ['React', 'Next.js', 'Node.js'],
+    tags: ['React', 'Next.js', 'Node.js', "SQL"],
     icon: Globe2,
-    accent: '#ECFDF5',
+    accent: '#ECFDF5', // light mint (unchanged)
     image:
       'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80',
   },
@@ -31,9 +24,9 @@ const services = [
     title: 'Mobile App Development',
     description:
       'From simple business apps to complex mobile products, we create smooth experiences across modern devices.',
-    tags: ['React Native', 'iOS', 'Android'],
+    tags: ['React Native','Flutter', 'iOS', 'Android'],
     icon: Smartphone,
-    accent: '#E3F7EE',
+    accent: '#D1FAE5', // light emerald
     image:
       'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1200&q=80',
   },
@@ -42,20 +35,20 @@ const services = [
     title: 'AI & Automation',
     description:
       'We connect AI with everyday business workflows to reduce repetitive work and create smarter digital experiences.',
-    tags: ['AI Integration', 'Automation', 'Chatbots'],
+    tags: ['AI Integration', 'Automation', 'Chatbots', 'LLM', 'RAG'],
     icon: Sparkles,
-    accent: '#D1FAE5',
+    accent: '#BBF7D0', // light fresh green (thoda yellow-green tilt)
     image:
       'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80',
   },
   {
     number: '04',
-    title: 'CRM & Business Systems',
+    title: 'Custom Software',
     description:
       'Custom dashboards, CRM platforms and internal systems designed around the way your business actually works.',
-    tags: ['CRM', 'Dashboards', 'APIs'],
+    tags: ['CRM', 'Dashboards', 'APIs', 'Backend'],
     icon: LayoutDashboard,
-    accent: '#F0FAF6',
+    accent: '#A7F3D0', // soft seafoam (unchanged)
     image:
       'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
   },
