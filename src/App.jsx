@@ -59,6 +59,7 @@ function AppContent() {
         <Route path="/terms" element={<Terms />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      
 
       {!isNotFound && <Footer />}
 

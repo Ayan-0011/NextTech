@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import TechnicalVisual from './TechnicalVisual'
 import EmeraldBackdrop from '../../components/ui/EmeraldBackdrop'
+import { projects } from '../../data/projects'
+import { services } from '../../data/services'
+import CountUp from '../../components/animations/CountUp'
 
 export default function Hero() {
   return (
@@ -70,15 +73,16 @@ export default function Hero() {
               className="flex flex-wrap gap-8 mt-10 pt-8 border-t border-white/15"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-            >
+              transition={{ duration: 0.6, delay: 0.7 }} >
               {[
-                { value: '3+', label: 'Projects delivered' },
-                { value: '4', label: 'Core services' },
-                { value: '100%', label: 'Client ownership' },
+                { value: projects.length, label: 'Projects delivered' },
+                { value: services.length, label: 'Core services' },
+                { value: 100, suffix: '%', label: 'Client ownership' },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <div className="text-2xl font-bold text-white">{stat.value}</div>
+                  <div className="text-2xl font-bold text-white tabular-nums">
+                    <CountUp to={stat.value} suffix={stat.suffix} />
+                  </div>
                   <div className="text-xs text-emerald-50/65 mt-0.5">{stat.label}</div>
                 </div>
               ))}

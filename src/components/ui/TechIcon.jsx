@@ -2,6 +2,7 @@ import {
   SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiTailwindcss,
   SiBootstrap, SiRedux, SiFramer, SiNodedotjs, SiExpress, SiMongodb, SiPostgresql,
   SiMysql, SiSupabase, SiFirebase, SiFlutter, SiKotlin, SiSwift, SiN8N,
+  SiOpenaigym,
 } from 'react-icons/si'
 import { FaHtml5, FaCss3Alt } from 'react-icons/fa'
 import {
@@ -36,7 +37,7 @@ const brandIcons = {
   'Flutter': [SiFlutter, '#02569B'],
   'Kotlin (Android native)': [SiKotlin, '#7F52FF'],
   'Swift (iOS native)': [SiSwift, '#F05138'],
-  'OpenAI API': Sparkles,
+  'OpenAI API': [SiOpenaigym],
   'n8n': [SiN8N, '#EA4B71'],
 }
 
