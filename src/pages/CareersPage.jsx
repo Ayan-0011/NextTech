@@ -54,13 +54,13 @@ export default function CareersPage() {
       {/* Open roles */}
       <section className="section-padding bg-surface">
         <div className="container">
-          <FadeIn className="max-w-xl mb-12">
+          <FadeIn className="max-w-xl mx-auto mb-12 text-center">
             <h2 className="heading-section text-forest mb-3">Open roles</h2>
             <p className="text-muted">
               Current openings. All roles are based in Ahmedabad with hybrid flexibility.
             </p>
           </FadeIn>
-          <div className="space-y-4 max-w-3xl">
+          <div className="space-y-4 max-w-3xl mx-auto">
             {careers.map((job) => (
               <FadeIn key={job.id}>
                 <CareerCard job={job} />
@@ -69,7 +69,7 @@ export default function CareersPage() {
           </div>
 
           {/* Open application CTA */}
-          <FadeIn className="mt-12 p-8 bg-bg border border-border rounded-xl max-w-3xl">
+          <FadeIn className="mt-12 p-8 bg-bg border border-border rounded-xl max-w-3xl mx-auto">
             <h3 className="text-lg font-bold text-forest mb-2">Don't see your role?</h3>
             <p className="text-muted text-sm mb-5">
               We occasionally hire for roles not listed here. If you think you'd fit in and want to build something meaningful, send your profile.
