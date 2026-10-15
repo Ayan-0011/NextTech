@@ -7,6 +7,7 @@ import WhatWeBuild  from '../sections/home/Index'
 import ProcessTabs from '../sections/home/Processtabs'
 import Testimonials from '../sections/home/Testimonials'
 import FAQ from '../sections/home/FAQ'
+import AboutPreview from '../sections/home/AboutPreview'
 
 export default function HomePage() {
   return (
@@ -23,6 +24,7 @@ export default function HomePage() {
       <TechnologySection />
       <Testimonials/>
       <FinalCTA />
+      <AboutPreview/>
       <FAQ/>
     </main>
   )
