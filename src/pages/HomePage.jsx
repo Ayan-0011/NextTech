@@ -24,7 +24,7 @@ export default function HomePage() {
       <TechnologySection />
       <Testimonials/>
       <FinalCTA />
-      {/* <AboutPreview/> */}
+      <AboutPreview/>
       <FAQ/>
     </main>
   )
