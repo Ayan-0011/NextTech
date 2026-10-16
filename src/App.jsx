@@ -53,16 +53,12 @@ function AppContent() {
         <Route path="/process" element={<ProcessPage />} />
         <Route path="/careers" element={<CareersPage />} />
         <Route path="/contact" element={<ContactPage />} />
-
-
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       
-
       {!isNotFound && <Footer />}
-
       {!isNotFound && <BackToTopButton />}
     </>
   );
